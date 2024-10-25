@@ -24,8 +24,8 @@ train_score = regr.score(X_train, y_train) * 100
 test_score = regr.score(X_test, y_test) * 100
 
 with open("metrics.txt", 'w') as outfile:
-    outfile.write(f"Training variance explained: {train_score}")
-    outfile.write(f"Test variance explained: {test_score}")
+    outfile.write(f"Training variance explained: {train_score}\n")
+    outfile.write(f"Test variance explained: {test_score}\n")
 
 # Calculate feature importance in random forest 
 importances = regr.feature_importances_
