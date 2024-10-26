@@ -25,7 +25,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## Model Metrics" >> report.md
-          cat matrics.txt >> report.md
+          cat metrics.txt >> report.md
 
           echo "## Data Visualization" >> report.md
           echo "![Feature Importance](feature_importance.png)" >> report.md
