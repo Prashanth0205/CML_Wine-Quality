@@ -22,12 +22,19 @@ jobs:
           # Your ML workflow goes here
           pip install -r requirements.txt
           python train.py
-          
-          echo "## Model Metrics" >> report.md
-          cat metrics.txt >> report.md
 
-          echo "## Data Visualization" >> report.md
-          echo "![Feature Importance](feature_importance.png)" >> report.md
-          echo "![Residuals](residuals.png)" >> report.md
+          echo "## Model Metrics" > report.md
+          cat metrics.txt >> report.md
           
-          cml comment create report.md
+          echo "## Data Visualization" > report.md
+          cml-publish feature_importance.png --md >> report.md
+          cml-publish residuals.png --md >> report.md
+          
+          # echo "## Model Metrics" >> report.md
+          # cat metrics.txt >> report.md
+
+          # echo "## Data Visualization" >> report.md
+          # echo "![Feature Importance](feature_importance.png)" >> report.md
+          # echo "![Residuals](residuals.png)" >> report.md
+          
+          # cml comment create report.md
